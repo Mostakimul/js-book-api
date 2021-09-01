@@ -34,7 +34,7 @@ searchBtn.addEventListener('click', async () => {
   // if search input is not empty
   if (inputText !== '') {
     // fetch from search input with api
-    const url = `http://openlibrary.org/search.json?q=${inputText}`;
+    const url = `https://openlibrary.org/search.json?q=${inputText}`;
     const res = await fetch(url);
     // convert result into json
     const books = await res.json();
