@@ -20,3 +20,21 @@ https://openlibrary.org/authors/{authhorKey}.json
 Example: https://openlibrary.org/authors/OL62134A.json
  */
 
+
+// Search button reference
+const searchBtn = document.getElementById('searchBtn');
+
+searchBtn.addEventListener('click', async () => {
+  // Searched book reference
+  const inputValue = document.getElementById('inputValue');
+  const inputText = inputValue.value;
+
+  // fetch
+  const url = `http://openlibrary.org/search.json?q=${inputText}`;
+  let res = await fetch(url);
+  let books = await res.json()
+  // console.log(books.docs);
+  books.docs.forEach((book) => {
+    console.log(book);
+  })
+});
